@@ -1,11 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
-import styled from 'styled-components'
-import rocktseatLogo from '../assets/rocketseat.svg'
+import { User, Lock, ArrowRight } from 'styled-icons/fa-solid'
+import { Facebook, Google, Twitter } from 'styled-icons/boxicons-logos'
 import { Container } from '../styles/pages/Home'
-const Title = styled.h1`
-  color: red;
-`
+import vetorlogin from '../assets/logooben2.svg'
 const Home: React.FC = () => {
   return (
     <Container>
@@ -14,9 +12,57 @@ const Home: React.FC = () => {
       </Head>
 
       <main>
-        <img src={rocktseatLogo} alt="" />
-        <h1>ReactJS Structure</h1>
-        <p>A ReactJS + Next.js structure made by Rocketseat.</p>
+        <div className="first-panel">
+          <img src={vetorlogin} alt="" />
+        </div>
+        <div className="auth-panel">
+          <h1>Bem vindo de volta!</h1>
+          <h2>Login</h2>
+          <div className="input">
+            <p>
+              <User />
+              Nome
+            </p>
+            <input type="text" />
+          </div>
+          <div className="input">
+            <p>
+              <Lock />
+              Senha
+            </p>
+            <input type="password" />
+          </div>
+          <div className="logIn">
+            <div className="social-media">
+              <ul className="list-social-media">
+                <a className="link-social-media" href="/#">
+                  <li className="item-social-media">
+                    <Facebook />
+                  </li>
+                </a>
+                <a className="link-social-media" href="/#">
+                  <li className="item-social-media">
+                    <Twitter />
+                  </li>
+                </a>
+                <a className="link-social-media" href="/#">
+                  <li className="item-social-media">
+                    <Google />
+                  </li>
+                </a>
+              </ul>
+            </div>
+            <button>
+              <ArrowRight />
+            </button>
+          </div>
+          <p className="suggest">
+            Ainda não é cadastrado? <a>Criar conta</a>
+          </p>
+          <p className="copyright">
+            Copyright © All Rights Reserved - Intelligence
+          </p>
+        </div>
       </main>
     </Container>
   )
